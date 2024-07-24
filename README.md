@@ -5,6 +5,14 @@ TASK - 1 : BOOK RECOMMENDATION SYSTEM
 
 Overview: This project is a book recommendation system that uses machine learning algorithms to suggest books to users based on their reading preferences. The system is built using Python and utilizes popular libraries such as Pandas, Matplotlib, Seaborn, and Scikit-learn for data analysis and visualization. The system is deployed using Flask, a lightweight web framework, and Flask-CORS for cross-origin resource sharing.
 
+Workflow:
+1) Data Exploration and Analysis (EDA)
+2) Data Preprocessing
+3) Model Building
+4) Database Integration
+5) API and Web Interface
+6) Logging and Error Handling
+
 Environment: To run this project, you need to create a Conda environment with the following specifications:
 
 Environment File: environment.yml
