@@ -39,5 +39,3 @@ Visualization of user reading habits and book ratings
 Dataset: The project uses a dataset of books.csv
 
 Contributing: If you'd like to contribute to this project, please fork the repository and submit a pull request. You can also report any issues or suggest new features by creating an issue in this repository.
-
-License: This project is licensed under the MIT License. See LICENSE for details.
