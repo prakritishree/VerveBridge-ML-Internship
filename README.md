@@ -44,6 +44,6 @@ Book search and filtering
 Personalized book recommendations based on user preferences
 Visualization of user reading habits and book ratings
 
-Dataset: The project uses a dataset of books.csv
+Dataset download link : https://gist.github.com/jaidevd/23aef12e9bf56c618c41
 
 Contributing: If you'd like to contribute to this project, please fork the repository and submit a pull request. You can also report any issues or suggest new features by creating an issue in this repository.
