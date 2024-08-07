@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Negotiator</title>
+</head>
+<body>
+    <h1>Price Negotiator</h1>
+
+    <h2>Negotiate Price</h2>
+    <form id="negotiateForm">
+        <label for="inputText">Input Text:</label>
+        <input type="text" id="inputText" name="inputText" required>
+        <br>
+        <label for="productId">Product ID:</label>
+        <input type="number" id="productId" name="productId" required>
+        <br>
+        <label for="userId">User ID:</label>
+        <input type="number" id="userId" name="userId" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Order</h2>
+    <form id="orderForm">
+        <label for="orderProductId">Product ID:</label>
+        <input type="number" id="orderProductId" name="productId" required>
+        <br>
+        <label for="orderUserId">User ID:</label>
+        <input type="number" id="orderUserId" name="userId" required>
+        <br>
+        <label for="orderPrice">Price:</label>
+        <input type="number" id="orderPrice" name="price" step="0.01" required>
+        <br>
+        <button type="submit">Place Order</button>
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('negotiateForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const responseDiv = document.getElementById('response');
+            const response = await fetch('/negotiate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    input_text: document.getElementById('inputText').value,
+                    product_id: parseInt(document.getElementById('productId').value),
+                    user_id: parseInt(document.getElementById('userId').value)
+                })
+            });
+            const result = await response.json();
+            responseDiv.innerText = result.response || result.error;
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const responseDiv = document.getElementById('response');
+            const response = await fetch('/order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    product_id: parseInt(document.getElementById('orderProductId').value),
+                    user_id: parseInt(document.getElementById('orderUserId').value),
+                    price: parseFloat(document.getElementById('orderPrice').value)
+                })
+            });
+            const result = await response.json();
+            responseDiv.innerText = result.response || result.error;
+        });
+    </script>
+</body>
+</html>

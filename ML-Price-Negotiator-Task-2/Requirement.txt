@@ -1,0 +1,12 @@
+<1.All Imported Module>
+NOTE:Install the latest version of these Module.
+--> import pandas as pd
+--> import numpy as np
+--> import astropy
+--> import joblib 
+--> import matplotlib.pyplot as plt
+--> from sklearn.feature_extraction.text import TfidfVectorizer
+--> import openAI
+--> from rasa_sdk import Action 
+--> from rasa_sdk import Tracker
+--> from rasa_sdk.executor import CollectingDispatche
