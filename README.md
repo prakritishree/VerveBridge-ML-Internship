@@ -87,36 +87,77 @@ This structure and description will help users quickly understand the purpose of
 
 ----------------------------------------------------------------------------TASK - 3 : CAMPUS PLACEMENT PREDICTION ------------------------------------------------------------------------
 
+Here's a comprehensive README overview for your GitHub repository:
+
+---
+
+# Campus Placement Prediction
+
+## Overview
+
+This project aims to predict whether a student will be placed in a campus recruitment drive based on various academic and extracurricular factors. Leveraging machine learning models, we developed a predictive system that assists in understanding the factors contributing to campus placements.
+
+## Features
+
+- **Multiple ML Models**: Logistic Regression, Decision Tree, and Random Forest models have been trained and evaluated.
+- **Web Interface**: A user-friendly web application where users can input student data and receive placement predictions.
+- **Feature Engineering**: Implemented advanced feature engineering techniques to enhance model performance.
+- **Scalable and Modular Code**: The project follows a modular structure, making it easy to maintain and extend.
+
+## Dataset
+
+The dataset used for training includes the following columns:
+- `sl_no`: Serial Number
+- `gender`: Gender of the student (Male=0, Female=1)
+- `ssc_p`: Secondary Education percentage (10th Grade)
+- `ssc_b`: Board of Education (Central/State)
+- `hsc_p`: Higher Secondary Education percentage (12th Grade)
+- `hsc_b`: Board of Education (Central/State)
+- `hsc_s`: Specialization in Higher Secondary Education
+- `degree_p`: Degree Percentage
+- `degree_t`: Type of Undergrad Degree (Science/Commerce/Others)
+- `workex`: Work Experience (Yes/No)
+- `etest_p`: E-test Percentage
+- `specialisation`: Post Graduate Specialization (Marketing & HR/Finance)
+- `mba_p`: MBA Percentage
+- `status`: Placement Status (Placed/Not Placed)
+- `salary`: Salary offered to the student
+
+## Installation
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/campus-placement-prediction.git
+    cd campus-placement-prediction
+    ```
+
+2. **Create a virtual environment**:
+    ```bash
+    python -m venv env
+    source env/bin/activate  # On Windows, use `env\Scripts\activate`
+    ```
+
+3. **Install the dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Run the application**:
+    ```bash
+    python app.py
+    ```
+
+## Usage
+
+- **Web Interface**: Open your browser and navigate to `http://127.0.0.1:5000/`. Enter the required student details and hit "Predict" to see the placement prediction.
+- **Model Evaluation**: The `evaluate.py` script can be used to evaluate the performance of the trained models.
+
 ## Project Structure
 
-CampusPlacementPrediction/
-│
-├── data/
-│   ├── train.csv
-│   ├── test.csv
-│   └── SampleSubmission.csv
-│
-├── src/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── data_loader.py
-│   ├── feature_engineering.py
-│   ├── model.py
-│   ├── train.py
-│   └── evaluate.py
-│
-├── notebooks/
-│   └── EDA.ipynb
-│
-├── models/
-│   └── model.pkl
-│
-├── logs/
-│   └── app.log
-│
-├── tests/
-│   ├── __init__.py
-│   └── test_model.py
-│
-├── requirements.txt
-└── README.md
+- `app.py`: Main application file for the Flask web server.
+- `model.py`: Contains code for training and saving the ML models.
+- `feature_engineering.py`: Script for feature engineering and preprocessing.
+- `evaluate.py`: Script for evaluating the trained models.
+- `templates/`: Contains the HTML templates for the web interface.
+- `static/`: Contains the CSS files for styling the web interface.
+- `requirements.txt`: Lists all the Python dependencies required to run the project.
